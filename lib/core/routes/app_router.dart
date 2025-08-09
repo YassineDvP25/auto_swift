@@ -1,7 +1,7 @@
 import 'package:auto_swift/core/api/dio_consumer.dart';
 import 'package:auto_swift/core/routes/routes.dart';
 import 'package:auto_swift/features/admin/cubit/admin_cubit.dart';
-import 'package:auto_swift/features/admin/screens/admin_page.dart';
+import 'package:auto_swift/features/admin/screens/admin_screen.dart';
 import 'package:auto_swift/features/screens/auth/sign_in_screen.dart';
 import 'package:auto_swift/features/screens/auth/sign_up_screen.dart';
 import 'package:dio/dio.dart';

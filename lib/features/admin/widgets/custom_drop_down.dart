@@ -1,5 +1,6 @@
 import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomDropdown extends StatelessWidget {
   const CustomDropdown({
@@ -30,6 +31,7 @@ class CustomDropdown extends StatelessWidget {
           icon: Icon(Icons.arrow_drop_down_sharp, size: 25),
         ),
         decoration: InputDecoration(
+          border: OutlineInputBorder(borderRadius: BorderRadius.circular(10).r),
           hintStyle: TextStyle(color: Colors.black87),
           contentPadding: EdgeInsets.symmetric(vertical: 9, horizontal: 10),
           filled: true,
