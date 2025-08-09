@@ -20,7 +20,7 @@ class AdminCubit extends Cubit<AdminState> {
 
   List<String> brands = ['Audi', 'Mersedise', 'Bmw', 'Range Rover'];
   List<String> availableColor = ['Black', 'White', 'Blue', 'Brown'];
-   String? selectedItem ;
+   String selectedItem = '' ;
   XFile? carImage;
   onChanged(value) {
     emit(selectedItem = value);
