@@ -22,4 +22,5 @@ class AppColors {
   static const grayScaleLabel = Color(0xff555555);
   static const grayScaleInputBg = Color(0xffF9F9F9);
   static const pink = Colors.pink;
+  static const green = Colors.green;
 }

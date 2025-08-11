@@ -55,7 +55,7 @@ const CustomTextFields({super.key});
             verticalSpace(15),
 
             AppTextFormField(
-              contoller: context.read<AdminCubit>().carModel,
+              contoller: context.read<AdminCubit>().carPrice,
               hintText: 'Car Price',
               contentPadding:
                   EdgeInsets.symmetric(vertical: 9, horizontal: 10).r,
