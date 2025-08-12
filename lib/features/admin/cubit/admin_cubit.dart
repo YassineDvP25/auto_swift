@@ -22,7 +22,7 @@ class AdminCubit extends Cubit<AdminState> {
   TextEditingController carPrice = TextEditingController();
   GlobalKey<FormState> globalKey = GlobalKey<FormState>();
 
-  List<String> brands = ['Audi', 'Mersedise', 'Bmw', 'Range Rover'];
+  List<String> brands = ['BMW', 'MERCEDESE', 'RANGE ROBER', 'AUDI'];
   List<String> availableColor = ['Black', 'White', 'Blue', 'Brown'];
   String selectedItem = '';
   Color circleAvatarColor = AppColors.pink;
@@ -52,6 +52,8 @@ class AdminCubit extends Cubit<AdminState> {
         ApiKeys.carBrand: selectedItem,
         ApiKeys.carPrice: carPrice.text,
         ApiKeys.carImage: image,
+        ApiKeys.carPrice: carPrice.text,
+        ApiKeys.carBr: brands.indexOf(selectedItem) + 1,
       }, isFormData: true);
       emit(UploadCarSuccess());
     } on ServerExeption catch (e) {
