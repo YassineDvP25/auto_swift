@@ -26,4 +26,5 @@ class ApiKeys {
   static String carBrand = 'carbrand';
   static String carPrice = 'carprice';
   static String carImage = 'carimage';
+  static String carBr = 'carbr';
 }
