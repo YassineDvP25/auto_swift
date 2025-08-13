@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 class CustomText extends StatelessWidget {
   final String text;
   final FontWeight fontWeight;
+  final String fontFamily;
   final double fontSize;
   final Color color;
   final double letterSpace;
@@ -16,7 +17,8 @@ class CustomText extends StatelessWidget {
     this.color = Colors.white,
     this.letterSpace = 0.0,
     this.overFlow = TextOverflow.ellipsis,
-    this.maxLine = 1
+    this.maxLine = 1,
+    this.fontFamily = 'RobotoSlab'
   });
 
   @override
@@ -29,7 +31,7 @@ class CustomText extends StatelessWidget {
         fontWeight: fontWeight,
         fontSize: fontSize,
         color: color,
-        fontFamily: 'RobotoSlab',
+        fontFamily: fontFamily,
         overflow: overFlow,
       ),
 
