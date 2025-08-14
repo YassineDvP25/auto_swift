@@ -1,11 +1,14 @@
 class ApiEndPoints {
-  static String baseUrl = 'http://192.168.1.22:8080/auto_car/';
+  static String baseUrl = 'http://192.168.1.22:9090/auto_car/';
   static String signIn = 'auth/login.php';
   static String signUp = 'auth/signup.php';
+  static String addCar = 'admin/products/add.php';
+  static String deleteCar = 'admin/products/delete.php';
+  static String getCar = 'home/view.php';
 }
 
 class ApiKeys {
-  static String status = 'statusCode';
+  static String status = 'status';
   static String message = 'message';
   static String userName = "username";
   static String email = 'useremail';
@@ -20,6 +23,8 @@ class ApiKeys {
   static String carEngin = 'carengin';
   static String carSpeed = 'carspeed';
   static String carSeats = 'carseats';
+  static String carBrand = 'carbrand';
   static String carPrice = 'carprice';
-  static String carImage = 'carImage';
+  static String carImage = 'carimage';
+  static String carBr = 'carbr';
 }
