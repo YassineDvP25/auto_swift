@@ -1,3 +1,4 @@
+import 'package:auto_swift/core/api/api_end_points.dart';
 import 'package:flutter/material.dart';
 
 class CarCard extends StatelessWidget {
@@ -36,7 +37,7 @@ class CarCard extends StatelessWidget {
           ClipRRect(
             borderRadius: BorderRadius.circular(12),
             child: Image.network(
-              imageUrl,
+              "${ApiEndPoints.baseUrl}upload/car_image/$imageUrl",
               height: 90,
               width: double.infinity,
               fit: BoxFit.cover,

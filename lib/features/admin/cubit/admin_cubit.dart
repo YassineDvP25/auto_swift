@@ -22,7 +22,7 @@ class AdminCubit extends Cubit<AdminState> {
   TextEditingController carPrice = TextEditingController();
   GlobalKey<FormState> globalKey = GlobalKey<FormState>();
 
-  List<String> brands = ['BMW', 'MERCEDESE', 'RANGE ROBER', 'AUDI'];
+  List<String> brands = ['BMW', 'MERCEDESE', 'RANGE ROVER', 'AUDI'];
   List<String> availableColor = ['Black', 'White', 'Blue', 'Brown'];
   String selectedItem = '';
   Color circleAvatarColor = AppColors.pink;
