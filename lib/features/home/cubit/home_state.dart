@@ -13,3 +13,5 @@ final class GetCarFailure extends HomeState {
   final String errorMessage;
   GetCarFailure(this.errorMessage);
 }
+  final class ChangeColor extends HomeState{}
+  

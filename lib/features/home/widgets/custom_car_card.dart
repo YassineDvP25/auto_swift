@@ -1,5 +1,6 @@
 import 'package:auto_swift/core/api/api_end_points.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CarCard extends StatelessWidget {
   final String imageUrl;
@@ -18,7 +19,8 @@ class CarCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 180,
+      width: 180.w,
+      // height: 200.h,
       padding: const EdgeInsets.all(12),
       decoration: BoxDecoration(
         color: Colors.white,
@@ -26,7 +28,7 @@ class CarCard extends StatelessWidget {
         boxShadow: [
           BoxShadow(
             color: Colors.black.withValues(alpha: 0.05),
-            blurRadius: 8,
+            blurRadius: 8.r,
             offset: const Offset(0, 4),
           ),
         ],
@@ -34,16 +36,18 @@ class CarCard extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          ClipRRect(
-            borderRadius: BorderRadius.circular(12),
-            child: Image.network(
-              "${ApiEndPoints.baseUrl}upload/car_image/$imageUrl",
-              height: 90,
-              width: double.infinity,
-              fit: BoxFit.cover,
+          Expanded(
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(12).r,
+              child: Image.network(
+                "${ApiEndPoints.baseUrl}upload/car_image/$imageUrl",
+                height: 90.h,
+                width: double.infinity,
+                fit: BoxFit.cover,
+              ),
             ),
           ),
-          const SizedBox(height: 8),
+            const SizedBox(height: 8),
           Text(
             carBrand,
             style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
@@ -84,6 +88,7 @@ class CarCard extends StatelessWidget {
               ),
             ],
           ),
+        
         ],
       ),
     );
