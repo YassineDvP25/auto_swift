@@ -30,7 +30,7 @@ class AppRouter {
         return MaterialPageRoute(
           builder:
               (_) => BlocProvider(
-                create: (context) => HomeCubit(DioConsumer(Dio())),
+                create: (context) => HomeCubit(DioConsumer(Dio()))..getCars(),
                 child: HomeScreen(),
               ),
         );

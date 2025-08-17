@@ -5,6 +5,7 @@ class ApiEndPoints {
   static String addCar = 'admin/products/add.php';
   static String deleteCar = 'admin/products/delete.php';
   static String getCar = 'home/view.php';
+  static String filterCars = 'home/filter_view.php';
 }
 
 class ApiKeys {
