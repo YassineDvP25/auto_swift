@@ -1,4 +1,9 @@
+import 'package:auto_swift/core/api/api_end_points.dart';
+import 'package:auto_swift/core/components/text.dart';
+import 'package:auto_swift/core/helpers/spacing.dart';
+import 'package:auto_swift/core/theming/colors/app_colors.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CarCard extends StatelessWidget {
   final String imageUrl;
@@ -17,37 +22,38 @@ class CarCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 180,
+      width: 180.w,
+      // height: 200.h,
       padding: const EdgeInsets.all(12),
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(16),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withValues(alpha: 0.05),
-            blurRadius: 8,
-            offset: const Offset(0, 4),
+    decoration:  BoxDecoration(
+              borderRadius: BorderRadius.circular(16).r,
+
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,   // يبدأ من الأعلى
+            end: Alignment.bottomCenter,  // ينتهي بالأسفل
+            colors: [
+              Color.fromARGB(255, 70, 69, 69), // لون رمادي فاتح (أعلى)
+              Color(0xFF0D0D0D), // لون داكن (أسفل)
+            ],
           ),
-        ],
-      ),
+        ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          ClipRRect(
-            borderRadius: BorderRadius.circular(12),
-            child: Image.network(
-              imageUrl,
-              height: 90,
-              width: double.infinity,
-              fit: BoxFit.cover,
+          Expanded(
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(12).r,
+              child: Image.network(
+                "${ApiEndPoints.baseUrl}upload/car_image/$imageUrl",
+                height: 90.h,
+                width: double.infinity,
+                fit: BoxFit.cover,
+              ),
             ),
           ),
-          const SizedBox(height: 8),
-          Text(
-            carBrand,
-            style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
-          ),
-          const SizedBox(height: 4),
+          verticalSpace(3),
+        CustomText(text: carBrand ,fontSize: 18,fontWeight: FontWeight.bold,color: AppColors.mainWhite,fontFamily: 'Oswald',letterSpace: 1,),
+          verticalSpace(4),
           Row(
             children: [
               const Icon(Icons.event_seat, size: 16, color: Colors.grey),
@@ -58,31 +64,28 @@ class CarCard extends StatelessWidget {
               ),
             ],
           ),
-          const SizedBox(height: 4),
+                  verticalSpace(4),
+
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(
-                "\$$pricePerDay/D",
-                style: const TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 15,
-                ),
-              ),
+              CustomText(text: "\$$pricePerDay/D", fontSize: 13,),
+          
               Container(
-                padding: const EdgeInsets.all(4),
+                padding: const EdgeInsets.all(4).r,
                 decoration: BoxDecoration(
                   color: Colors.blue.withValues(alpha: 0.1),
                   shape: BoxShape.circle,
                 ),
-                child: const Icon(
+                child:  Icon(
                   Icons.arrow_forward,
-                  color: Colors.blue,
-                  size: 18,
+                  color: Colors.amber,
+                  size: 18.sp,
                 ),
               ),
             ],
           ),
+        
         ],
       ),
     );
