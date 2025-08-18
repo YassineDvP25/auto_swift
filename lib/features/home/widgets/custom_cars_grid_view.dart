@@ -12,12 +12,12 @@ class CustomCarsGridView extends StatelessWidget {
     return BlocBuilder<HomeCubit, HomeState>(
       builder: (context, state) {
         return GridView.builder(
-          padding: EdgeInsets.all(0),
+          padding: EdgeInsets.symmetric(vertical: 0 ,horizontal: 0),
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
             childAspectRatio: 1.0,
-            crossAxisSpacing: 10.0,
-            mainAxisSpacing: 10,
+            crossAxisSpacing: 14.0,
+            mainAxisSpacing: 14,
           ),
           itemCount: context.read<HomeCubit>().cars.length,
           itemBuilder: (context, index) {

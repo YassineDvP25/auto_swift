@@ -13,8 +13,9 @@ class AppColors {
     mainWhite,
     BlendMode.srcIn,
   );
-  static const mainGrey = Color(0xffC5C5C5);
+  // static const mainGrey = Color(0xffC5C5C5);
   static const mainLightGrey = Color(0xff555555);
+  static const mainGrey = Color(0xff555555);
   //#DD8560
   static const mainOrange = Color(0xffDD8560);
   static const mainDarkGrey = Color(0xff333333);
@@ -23,4 +24,6 @@ class AppColors {
   static const grayScaleInputBg = Color(0xffF9F9F9);
   static const pink = Colors.pink;
   static const green = Colors.green;
+  static const mainDarkerGrey = Color(0xff252525);
+  static const darkerGrey = Color(0xff1F1F1F);
 }

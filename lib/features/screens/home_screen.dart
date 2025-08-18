@@ -7,7 +7,6 @@ import 'package:auto_swift/features/home/widgets/custom_cars_grid_view.dart';
 import 'package:auto_swift/features/home/widgets/custom_top_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -15,61 +14,72 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.mainWhite,
-      body: BlocBuilder<HomeCubit, HomeState>(
-        
-        builder: (context, state) {
-          
-          return Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 60).r,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                CustomTopBar(),
-                verticalSpace(20),
-                Row(
-                  children: [
-                    CustomText(
-                      text: 'Hello,',
-                      fontSize: 25,
-                      color: AppColors.mainLightGrey,
-                    ),
-                    horizantalSpace(5),
-                    CustomText(
-                      text: 'Yassine',
-                      fontSize: 30,
-                      color: AppColors.mainBlack,
-                    ),
-                  ],
-                ),
-
-                verticalSpace(2),
-
-                CustomText(
-                  text: 'Choose your Ideal Car',
-                  fontFamily: 'Regular',
-                  color: AppColors.mainDarkGrey,
-                  fontSize: 15,
-                ),
-                verticalSpace(20),
-
-                CustomCarBrandsRow(),
-
-                verticalSpace(30),
-                state is GetCarLoading
-                    ? Center(child: CircularProgressIndicator())
-                    : state is GetCarSuccess
-                    ? Expanded(child: CustomCarsGridView())
-                    : Center(
-                      child: CustomText(
-                        text: 'No Data',
-                        color: AppColors.mainBlack,
+      backgroundColor: const Color.fromRGBO(0, 0, 0, 0),
+      body: Container(
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topCenter, 
+            end: Alignment.bottomCenter, 
+            colors: [
+              AppColors.mainGrey, 
+              AppColors.mainBlack, 
+            ],
+          ),
+        ),
+        child: BlocBuilder<HomeCubit, HomeState>(
+          builder: (context, state) {
+            return Padding(
+              padding:
+                  const EdgeInsets.only(top: 60,left: 20, right: 20),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  CustomTopBar(),
+                  verticalSpace(20),
+                  Row(
+                    children: [
+                      CustomText(
+                        text: 'Hello,',
+                        fontSize: 20,
+                        color:  Color.fromRGBO(198, 192, 192, 1),
                       ),
-                    ),
-              ],
-            ),
-          );
-        },
+                      horizantalSpace(5),
+                      CustomText(
+                        text: 'Yassine',
+                        fontSize: 25,
+                        color: AppColors.mainWhite,
+                      ),
+                    ],
+                  ),
+
+                  verticalSpace(2),
+
+                  CustomText(
+                    text: 'Choose your Ideal Car',
+                    fontFamily: 'Regular',
+                    color: AppColors.mainWhite,
+                    fontSize: 15,
+                  ),
+                  verticalSpace(40),
+
+                  CustomCarBrandsRow(),
+
+                  verticalSpace(30),
+                  state is GetCarLoading
+                      ? Center(child: CircularProgressIndicator())
+                      : state is GetCarSuccess
+                      ? Expanded(child: CustomCarsGridView())
+                      : Center(
+                        child: CustomText(
+                          text: 'No Data',
+                          color: AppColors.mainBlack,
+                        ),
+                      ),
+                ],
+              ),
+            );
+          },
+        ),
       ),
     );
   }

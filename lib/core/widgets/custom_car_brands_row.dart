@@ -13,6 +13,7 @@ class CustomCarBrandsRow extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<HomeCubit, HomeState>(
       builder: (context, state) {
+        int brandSelected = context.read<HomeCubit>().brandSelected;
         return SingleChildScrollView(
           scrollDirection: Axis.horizontal,
 
@@ -24,17 +25,23 @@ class CustomCarBrandsRow extends StatelessWidget {
                   context.read<HomeCubit>().getCars();
                 },
                 child: Container(
-                  padding: EdgeInsets.symmetric(horizontal: 10).r,
+                  padding: EdgeInsets.symmetric(horizontal: 15, vertical: 5).r,
                   decoration: BoxDecoration(
                     color:
-                        context.read<HomeCubit>().brandSelected == 0
-                            ? Colors.blue
-                            : Colors.white,
+                        brandSelected == 0
+                            ? Colors.amber
+                            : AppColors.mainDarkGrey,
 
-                    border: Border.all(width: 2.w),
-                    borderRadius: BorderRadius.circular(10).r,
+                    border: Border.all(width: 1.w, color: AppColors.mainGrey),
+                    borderRadius: BorderRadius.circular(15).r,
                   ),
-                  child: CustomText(text: "All", color: AppColors.mainDarkGrey),
+                  child: CustomText(
+                    text: "All",
+                    color:
+                        brandSelected == 0
+                            ? AppColors.mainBlack
+                            : AppColors.mainWhite,
+                  ),
                 ),
               ),
               horizantalSpace(3),
@@ -47,20 +54,26 @@ class CustomCarBrandsRow extends StatelessWidget {
                     context.read<HomeCubit>().filterCars(index + 1);
                   },
                   child: Container(
-                    margin: EdgeInsets.symmetric(horizontal: 3).r,
-                    padding: EdgeInsets.symmetric(horizontal: 10).r,
+                    margin: EdgeInsets.symmetric(horizontal: 4).r,
+                    padding:
+                        EdgeInsets.symmetric(horizontal: 15, vertical: 5).r,
                     decoration: BoxDecoration(
                       color:
-                          context.read<HomeCubit>().brandSelected == index + 1
-                              ? Colors.blue
-                              : Colors.white,
+                          brandSelected == index + 1
+                              ? Colors.amber
+                              : AppColors.mainDarkGrey,
 
-                      border: Border.all(width: 2.w),
-                      borderRadius: BorderRadius.circular(10).r,
+                      border: Border.all(width: 1.w, color: AppColors.mainGrey),
+                      borderRadius: BorderRadius.circular(15).r,
                     ),
                     child: CustomText(
                       text: context.read<HomeCubit>().brands[index],
-                      color: AppColors.mainDarkGrey,
+                      color:
+                          brandSelected == index + 1
+                              ? AppColors.mainBlack
+                              : AppColors.mainWhite,
+                      fontFamily: 'Reg',
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
                 );
