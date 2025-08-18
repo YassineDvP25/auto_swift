@@ -4,9 +4,7 @@ import 'package:auto_swift/core/api/api_consumer.dart';
 import 'package:auto_swift/core/api/api_end_points.dart';
 import 'package:auto_swift/core/errors/exeptions.dart';
 import 'package:bloc/bloc.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:meta/meta.dart';
 
 part 'home_state.dart';
 
@@ -14,7 +12,7 @@ class HomeCubit extends Cubit<HomeState> {
   HomeCubit(this.api) : super(HomeInitial());
   final ApiConsumer api;
 
-  List<String> brands = ['BMW', 'MERCEDESE', 'RANGE ROBER', 'AUDI'];
+  List<String> brands = ['BMW', 'MERCEDESE', 'RANGE ROVER', 'AUDI'];
   List cars = [];
   int brandSelected = 0;
   Color brandButtonColor = Colors.white;
