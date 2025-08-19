@@ -21,7 +21,7 @@ class HomeScreen extends StatelessWidget {
             begin: Alignment.topCenter, 
             end: Alignment.bottomCenter, 
             colors: [
-              AppColors.mainGrey, 
+              Color.fromARGB(255, 28, 28, 28), 
               AppColors.mainBlack, 
             ],
           ),
