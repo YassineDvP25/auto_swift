@@ -3,7 +3,7 @@ import 'package:auto_swift/core/functions/custom_awesom_dialog.dart';
 import 'package:auto_swift/core/helpers/spacing.dart';
 import 'package:auto_swift/core/helpers/textstyles.dart';
 import 'package:auto_swift/core/theming/colors/app_colors.dart';
-import 'package:auto_swift/core/widgets/custom_app_text_Button.dart';
+import 'package:auto_swift/core/widgets/custom_app_text_button.dart';
 import 'package:auto_swift/features/admin/cubit/admin_cubit.dart';
 import 'package:auto_swift/features/admin/widgets/custom_circle_avatar_and_upload_image_car.dart';
 import 'package:auto_swift/features/admin/widgets/custom_drop_down.dart';
