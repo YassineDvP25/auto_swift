@@ -1,6 +1,5 @@
 import 'package:auto_swift/core/helpers/spacing.dart';
 import 'package:auto_swift/core/routes/routes.dart';
-import 'package:auto_swift/core/widgets/app_text_form_field.dart';
 import 'package:auto_swift/features/auth/classes/auth_controller.dart';
 import 'package:auto_swift/features/auth/classes/auth_service.dart';
 import 'package:auto_swift/features/auth/functions/show_snack.dart';
@@ -17,7 +16,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SignInPage extends StatefulWidget {
-  static const route = '/signinScreen';
+  static const route = '/signInScreen';
   const SignInPage({super.key});
 
   @override
@@ -78,7 +77,7 @@ class _SignInPageState extends State<SignInPage> {
                   AuthTextField(
                     controller: _email,
                     label: 'Email',
-                    
+                    suffxIcon: Icon(Icons.email, size: 16.sp,),
                     keyboardType: TextInputType.emailAddress,
                     textInputAction: TextInputAction.none,
                     validator: Validators.email,
