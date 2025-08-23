@@ -4,6 +4,7 @@ class CustomText extends StatelessWidget {
   final String text;
   final FontWeight fontWeight;
   final String fontFamily;
+  final FontStyle fontStyle;
   final double fontSize;
   final Color color;
   final double letterSpace;
@@ -18,7 +19,8 @@ class CustomText extends StatelessWidget {
     this.letterSpace = 0.0,
     this.overFlow = TextOverflow.ellipsis,
     this.maxLine = 1,
-    this.fontFamily = 'RobotoSlab'
+    this.fontFamily = 'RobotoSlab',
+    this.fontStyle = FontStyle.normal,
   });
 
   @override
@@ -32,6 +34,7 @@ class CustomText extends StatelessWidget {
         fontSize: fontSize,
         color: color,
         fontFamily: fontFamily,
+        fontStyle: fontStyle,
         overflow: overFlow,
       ),
 

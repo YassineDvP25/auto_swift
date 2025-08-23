@@ -6,6 +6,7 @@ import 'package:auto_swift/features/screens/admin_screen.dart';
 import 'package:auto_swift/features/screens/auth/sign_in_screen.dart';
 import 'package:auto_swift/features/screens/auth/sign_up_screen.dart';
 import 'package:auto_swift/features/screens/home_screen.dart';
+import 'package:auto_swift/features/screens/onboarding.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -13,6 +14,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 class AppRouter {
   Route? generateRoute(RouteSettings settings) {
     switch (settings.name) {
+      case Routes.onboardingScreen:
+        return MaterialPageRoute(builder: (_) =>  OnboardingScreen());
       case Routes.signInScreen:
         return MaterialPageRoute(builder: (_) =>  SignInPage());
       case Routes.signUpScreen:
