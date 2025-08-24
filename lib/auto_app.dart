@@ -58,8 +58,7 @@ class AutoApp extends StatelessWidget {
 
       child: MaterialApp(
         theme: baseTheme,
- development
-        initialRoute: Routes.onboardingScreen,
+        initialRoute: Routes.homeScreen,
 
         debugShowCheckedModeBanner: false,
         onGenerateRoute: approuter.generateRoute,

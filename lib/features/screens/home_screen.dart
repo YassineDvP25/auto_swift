@@ -14,15 +14,15 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromRGBO(0, 0, 0, 0),
+      // backgroundColor: const Color.fromARGB(0, 0, 0, 0),
       body: Container(
         decoration: const BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment.topCenter, 
             end: Alignment.bottomCenter, 
             colors: [
-              Color.fromARGB(255, 28, 28, 28), 
-              AppColors.mainBlack, 
+              Color.fromARGB(255, 41, 40, 40), 
+              Color.fromARGB(255, 0, 0, 0), 
             ],
           ),
         ),

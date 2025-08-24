@@ -27,6 +27,7 @@ class CustomCarsGridView extends StatelessWidget {
               imageUrl: car.carImage!,
               carBrand: car.carBrand!,
               seats: int.parse(car.carSeats!),
+              carId: car.carId!,
               pricePerDay: int.parse(car.carPrice!).toDouble(),
               onTap: () {
                 Navigator.push(
@@ -35,6 +36,7 @@ class CustomCarsGridView extends StatelessWidget {
                     builder: (context) {
                       return DetailsScreen(
                         data: {
+                          "carId": car.carId,
                           "carImage": car.carImage,
                           "carBrand": car.carBrand,
                           "carSeats": car.carSeats,

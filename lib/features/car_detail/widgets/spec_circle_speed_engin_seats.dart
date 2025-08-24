@@ -22,13 +22,13 @@ class SpecCircleSpeedEnginSeats extends StatelessWidget {
         ),
         SpecItem(
           value: carEngin,
-          label: "Max speed",
-          icon: Icons.speed,
+          label: "Engin",
+          icon: Icons.settings,
         ),
         SpecItem(
           value: "$carSeats Seats",
-          label: "Max speed",
-          icon: Icons.speed,
+          label: "Seats",
+          icon: Icons.event_seat_sharp,
         ),
       ],
     );

@@ -1,5 +1,6 @@
 import 'package:auto_swift/core/components/text.dart';
 import 'package:auto_swift/core/functions/format_prices_number.dart';
+import 'package:auto_swift/core/helpers/spacing.dart';
 import 'package:auto_swift/core/theming/colors/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -31,7 +32,7 @@ class CustomPriceCard extends StatelessWidget {
             ),
           ],
         ),
-        const SizedBox(height: 20),
+        verticalSpace(20),
         // Checkout Row
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -43,18 +44,24 @@ class CustomPriceCard extends StatelessWidget {
               fontSize: 16,
             ),
     
-            ElevatedButton(
-              onPressed: () {},
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.yellow,
-                foregroundColor: Colors.black,
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 15, vertical: 8).r,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(30).r,
+            SizedBox(
+              width:90.w,
+              height: 30.h,
+              child: ElevatedButton(
+                onPressed: () {},
+                
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.yellow,
+                  foregroundColor: Colors.black,
+                  
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 15, vertical: 8).r,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30).r,
+                  ),
                 ),
+                child: CustomText(text: 'Buy Now', color: AppColors.mainBlack),
               ),
-              child: CustomText(text: 'Buy Now', color: AppColors.mainBlack),
             ),
           ],
         ),

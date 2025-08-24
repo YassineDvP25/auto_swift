@@ -9,6 +9,8 @@ class CarCard extends StatelessWidget {
   final String imageUrl;
   final String carBrand;
   final int seats;
+  final int carId;
+
   final double pricePerDay;
   final void Function()? onTap;
 
@@ -17,7 +19,9 @@ class CarCard extends StatelessWidget {
     required this.imageUrl,
     required this.carBrand,
     required this.seats,
-    required this.pricePerDay, this.onTap,
+    required this.pricePerDay,
+    this.onTap,
+    required this.carId,
   });
 
   @override
@@ -46,11 +50,14 @@ class CarCard extends StatelessWidget {
             Expanded(
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(12).r,
-                child: Image.network(
-                  "${ApiEndPoints.baseUrl}upload/car_image/$imageUrl",
-                  height: 90.h,
-                  width: double.infinity,
-                  fit: BoxFit.cover,
+                child: Hero(
+                  tag: carId,
+                  child: Image.network(
+                    "${ApiEndPoints.baseUrl}upload/car_image/$imageUrl",
+                    height: 90.h,
+                    width: double.infinity,
+                    fit: BoxFit.cover,
+                  ),
                 ),
               ),
             ),
