@@ -39,9 +39,12 @@ class DetailsScreen extends StatelessWidget {
                   children: [
                     verticalSpace(20),
                     SizedBox(
-                      child: Image.network(
-                        "${ApiEndPoints.baseUrl}upload/car_image/${data['carImage']}",
-                        height: 170.h,
+                      child: Hero(
+                        tag: data['carId'],
+                        child: Image.network(
+                          "${ApiEndPoints.baseUrl}upload/car_image/${data['carImage']}",
+                          height: 170.h,
+                        ),
                       ),
                     ),
 
