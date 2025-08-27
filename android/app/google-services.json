@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "166234433400",
-    "project_id": "auto-c4e8b",
-    "storage_bucket": "auto-c4e8b.firebasestorage.app"
+    "project_number": "14531848481",
+    "project_id": "auto-swift-cdc6a",
+    "storage_bucket": "auto-swift-cdc6a.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:166234433400:android:56a3e5cc0195e883ceca8d",
+        "mobilesdk_app_id": "1:14531848481:android:5adf5614ae5844098cf660",
         "android_client_info": {
           "package_name": "com.example.auto_swift"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyC_Hp28KBMtLzbtwp3PRW08Ib6ZnmXC_3o"
+          "current_key": "AIzaSyBl1UK_8FyvujAMu5xRj1WiM5NRuZQwfGY"
         }
       ],
       "services": {

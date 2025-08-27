@@ -1,6 +1,7 @@
 import 'package:auto_swift/core/api/dio_consumer.dart';
 import 'package:auto_swift/core/routes/routes.dart';
 import 'package:auto_swift/features/admin/cubit/admin_cubit.dart';
+import 'package:auto_swift/features/auth/cubit/user_cubit.dart';
 import 'package:auto_swift/features/home/cubit/home_cubit.dart';
 import 'package:auto_swift/features/screens/admin_screen.dart';
 import 'package:auto_swift/features/screens/auth/sign_in_screen.dart';
@@ -15,11 +16,17 @@ class AppRouter {
   Route? generateRoute(RouteSettings settings) {
     switch (settings.name) {
       case Routes.onboardingScreen:
-        return MaterialPageRoute(builder: (_) =>  OnboardingScreen());
+        return MaterialPageRoute(builder: (_) => OnboardingScreen());
       case Routes.signInScreen:
-        return MaterialPageRoute(builder: (_) =>  SignInPage());
+        return MaterialPageRoute(builder: (_) => SignInPage());
       case Routes.signUpScreen:
-        return MaterialPageRoute(builder: (_) =>  SignUpPage());
+        return MaterialPageRoute(
+          builder:
+              (_) => BlocProvider(
+                create: (context) => UserCubit(DioConsumer(Dio())),
+                child: SignUpPage(),
+              ),
+        );
 
       case Routes.adminPage:
         return MaterialPageRoute(
