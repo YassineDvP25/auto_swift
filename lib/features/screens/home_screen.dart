@@ -14,72 +14,60 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // backgroundColor: const Color.fromARGB(0, 0, 0, 0),
-      body: Container(
-        decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topCenter, 
-            end: Alignment.bottomCenter, 
-            colors: [
-              Color.fromARGB(255, 41, 40, 40), 
-              Color.fromARGB(255, 0, 0, 0), 
-            ],
-          ),
-        ),
-        child: BlocBuilder<HomeCubit, HomeState>(
-          builder: (context, state) {
-            return Padding(
-              padding:
-                  const EdgeInsets.only(top: 60,left: 20, right: 20),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  CustomTopBar(),
-                  verticalSpace(20),
-                  Row(
-                    children: [
-                      CustomText(
-                        text: 'Hello,',
-                        fontSize: 20,
-                        color:  Color.fromRGBO(198, 192, 192, 1),
+      backgroundColor:AppColors.black,
+      body: BlocBuilder<HomeCubit, HomeState>(
+        builder: (context, state) {
+          return Padding(
+            padding:
+                const EdgeInsets.only(top: 60,left: 20, right: 20),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                CustomTopBar(),
+                verticalSpace(20),
+                Row(
+                  children: [
+                    CustomText(
+                      text: 'Hello,',
+                      fontSize: 20,
+                      color:  Color.fromRGBO(198, 192, 192, 1),
+                    ),
+                    horizantalSpace(5),
+                    CustomText(
+                      text: 'Yassine',
+                      fontSize: 25,
+                      color: AppColors.mainWhite,
+                    ),
+                  ],
+                ),
+      
+                verticalSpace(2),
+      
+                CustomText(
+                  text: 'Choose your Ideal Car',
+                  fontFamily: 'Regular',
+                  color: AppColors.mainWhite,
+                  fontSize: 15,
+                ),
+                verticalSpace(40),
+      
+                CustomCarBrandsRow(),
+      
+                verticalSpace(30),
+                state is GetCarLoading
+                    ? Center(child: CircularProgressIndicator())
+                    : state is GetCarSuccess
+                    ? Expanded(child: CustomCarsGridView())
+                    : Center(
+                      child: CustomText(
+                        text: 'No Data',
+                        color: AppColors.mainBlack,
                       ),
-                      horizantalSpace(5),
-                      CustomText(
-                        text: 'Yassine',
-                        fontSize: 25,
-                        color: AppColors.mainWhite,
-                      ),
-                    ],
-                  ),
-
-                  verticalSpace(2),
-
-                  CustomText(
-                    text: 'Choose your Ideal Car',
-                    fontFamily: 'Regular',
-                    color: AppColors.mainWhite,
-                    fontSize: 15,
-                  ),
-                  verticalSpace(40),
-
-                  CustomCarBrandsRow(),
-
-                  verticalSpace(30),
-                  state is GetCarLoading
-                      ? Center(child: CircularProgressIndicator())
-                      : state is GetCarSuccess
-                      ? Expanded(child: CustomCarsGridView())
-                      : Center(
-                        child: CustomText(
-                          text: 'No Data',
-                          color: AppColors.mainBlack,
-                        ),
-                      ),
-                ],
-              ),
-            );
-          },
-        ),
+                    ),
+              ],
+            ),
+          );
+        },
       ),
     );
   }

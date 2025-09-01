@@ -1,9 +1,14 @@
 import 'dart:async';
+import 'package:auto_swift/core/api/dio_consumer.dart';
 import 'package:auto_swift/core/components/text.dart';
 import 'package:auto_swift/core/helpers/spacing.dart';
 import 'package:auto_swift/core/theming/colors/app_colors.dart';
+import 'package:auto_swift/features/auth/cubit/user_cubit.dart';
 import 'package:auto_swift/features/screens/auth/sign_in_screen.dart';
+import 'package:auto_swift/features/screens/auth/sign_up_screen.dart';
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class OnboardingScreen extends StatefulWidget {
   const OnboardingScreen({super.key});
@@ -31,13 +36,21 @@ class _OnboardingScreenState extends State<OnboardingScreen>
     // الانتقال بعد 3 ثواني
     Timer(const Duration(seconds: 3), () {
       Navigator.of(context).pushReplacement(
-        PageRouteBuilder(
-          transitionDuration: const Duration(milliseconds: 800),
-          pageBuilder: (_, __, ___) => const SignInPage(),
-          transitionsBuilder: (_, anim, __, child) {
-            return FadeTransition(opacity: anim, child: child);
+        MaterialPageRoute(
+          builder: (context) {
+            return BlocProvider(
+              create: (context) => UserCubit(DioConsumer(Dio())),
+              child: SignUpPage(),
+            );
           },
         ),
+         // PageRouteBuilder(
+        //   transitionDuration: const Duration(milliseconds: 800),
+        //   pageBuilder: (_, __, ___) => const SignInPage(),
+        //   transitionsBuilder: (_, anim, __, child) {
+        //     return FadeTransition(opacity: anim, child: child);
+        //   },
+        // ),
       );
     });
   }
