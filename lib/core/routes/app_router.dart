@@ -18,7 +18,10 @@ class AppRouter {
       case Routes.onboardingScreen:
         return MaterialPageRoute(builder: (_) => OnboardingScreen());
       case Routes.signInScreen:
-        return MaterialPageRoute(builder: (_) => SignInPage());
+        return MaterialPageRoute(builder: (_) => BlocProvider(
+                create: (context) => UserCubit(DioConsumer(Dio())),
+                child: SignInPage(),
+              ),);
       case Routes.signUpScreen:
         return MaterialPageRoute(
           builder:

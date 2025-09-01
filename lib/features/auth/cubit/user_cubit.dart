@@ -1,7 +1,6 @@
-import 'dart:convert';
-
 import 'package:auto_swift/core/api/api_consumer.dart';
 import 'package:auto_swift/core/errors/exeptions.dart';
+import 'package:auto_swift/core/routes/routes.dart';
 import 'package:auto_swift/features/auth/cubit/user_state.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -55,7 +54,7 @@ class UserCubit extends Cubit<UserState> {
     }
   }
 
-  signUp() async {
+  signUp(context) async {
     try {
       emit(SignUpLoading());
       await FirebaseAuth.instance.createUserWithEmailAndPassword(
@@ -64,6 +63,7 @@ class UserCubit extends Cubit<UserState> {
       );
 
       emit(SignUpSuccess());
+      Navigator.pushReplacementNamed(context, Routes.homeScreen);
     } on ServerExeption catch (e) {
       print('============ Error $e ==========');
 

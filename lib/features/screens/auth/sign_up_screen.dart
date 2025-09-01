@@ -149,7 +149,7 @@ class _SignUpPageState extends State<SignUpPage> {
                         onPressed: () {
                            _controller.loading
                               ? null
-                              : context.read<UserCubit>().signUp();
+                              : context.read<UserCubit>().signUp(context);
                         },
                         child:
                             _controller.loading

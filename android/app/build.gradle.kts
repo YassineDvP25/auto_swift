@@ -11,7 +11,7 @@ plugins {
 
 dependencies {
   // Import the Firebase BoM
-  implementation(platform("com.google.firebase:firebase-bom:34.0.0"))
+  implementation(platform("com.google.firebase:firebase-bom:34.1.0"))
 
 }
 
@@ -34,7 +34,7 @@ android {
         applicationId = "com.example.auto_swift"
         // You can update the following values to match your application needs.
         // For more information, see: https://flutter.dev/to/review-gradle-config.
-        minSdk = 23
+        minSdk = 24
         targetSdk = flutter.targetSdkVersion
         versionCode = flutter.versionCode
         versionName = flutter.versionName

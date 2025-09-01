@@ -25,4 +25,5 @@ class AppColors {
   static const green = Colors.green;
   static const mainDarkerGrey = Color(0xff252525);
   static const darkerGrey = Color(0xff1F1F1F);
+  static const black = Color(0xff1F1F1F);
 }
